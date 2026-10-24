@@ -46,7 +46,7 @@ A 2D story game made with plain HTML, CSS and JavaScript. Doodle, a blue blowfis
 | `doodle-falling.png` | Doodle falling out of the tube |
 | `test-tube-broken.png` | The empty, broken tube |
 | `doodle-without-accessories.png` | Doodle standing |
-| `doodle-side-without-accessories.png` | Doodle walking right (flipped when walking left). **Not in the assets folder yet.** `doodle-without-accessories.png` is used instead until it is added. |
+| `doodle-moving-without-accessories.png` | Doodle walking right (flipped when walking left) |
 | `scene-2-background.png` | Times Square background |
 
 ## Changing the story timing

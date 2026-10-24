@@ -42,7 +42,7 @@ const IMAGE_FILES = {
   doodleFalling: "assets/doodle-falling.png",
   testTubeBroken: "assets/test-tube-broken.png",
   doodleWithoutAccessories: "assets/doodle-without-accessories.png",
-  doodleSideWithoutAccessories: "assets/doodle-side-without-accessories.png",
+  doodleMovingWithoutAccessories: "assets/doodle-moving-without-accessories.png",
   scene2Background: "assets/scene-2-background.png"
 };
 
@@ -159,7 +159,7 @@ function fillBlack(alpha) {
 
 // Doodle uses the side picture while walking right, if it exists
 function doodleWalkPicture() {
-  return imageReady("doodleSideWithoutAccessories") ? "doodleSideWithoutAccessories" : "doodleWithoutAccessories";
+  return imageReady("doodleMovingWithoutAccessories") ? "doodleMovingWithoutAccessories" : "doodleWithoutAccessories";
 }
 
 // ---------- Falling and landing ----------
