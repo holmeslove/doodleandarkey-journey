@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doodle and Arkey's Journey</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="game" width="960" height="540"></canvas>
+
+    <!-- Title screen: settings and the Play button sit over the title picture. Space or Enter also starts. -->
+    <div id="menu" class="visible">
+      <h1>Doodle and Arkey's Journey</h1>
+      <button id="play-button">Play</button>
+      <div id="settings">
+        <label class="setting">
+          Music volume
+          <input type="range" id="music-slider" min="0" max="10" step="1">
+        </label>
+        <label class="setting">
+          Sound effects volume
+          <input type="range" id="sound-slider" min="0" max="10" step="1">
+        </label>
+        <label class="setting">
+          Background darkness
+          <input type="range" id="darkness-slider" min="0" max="80" step="5">
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

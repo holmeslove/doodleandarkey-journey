@@ -1,0 +1,145 @@
+/* ---------- Page layout ----------
+   The page holds one picture, the story, scaled by game.js to fit the window without stretching. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* game.js sets the width and height of this box to match the picture */
+#game-container {
+  position: relative;
+  flex: none;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+/* ---------- Title screen ----------
+   The title words are part of the title picture, so the heading is only for screen readers.
+   The settings sit in a dark panel near the bottom, where the picture is empty. */
+#menu {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-bottom: 6%;
+  box-sizing: border-box;
+  transition: opacity 0.8s;
+}
+
+#menu.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#menu.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#menu h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+#play-button {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 12px 48px;
+  border: none;
+  border-radius: 10px;
+  background: #5b8cff;
+  color: #fff;
+  box-shadow: 0 6px 0 #2c4fa3;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+#play-button:hover {
+  filter: brightness(1.1);
+}
+
+#play-button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+#settings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 28px;
+  padding: 14px 22px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  max-width: 92%;
+}
+
+.setting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 16px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.setting input[type="range"] {
+  width: 200px;
+  cursor: pointer;
+}
+
+/* Breathing Play button, to invite a press (skipped if the computer asks for less motion) */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  #play-button {
+    animation: breathe 2.4s ease-in-out infinite;
+  }
+
+  #play-button:active {
+    animation: none;
+  }
+}
+
+/* On a phone held sideways, the settings stack more tightly */
+@media (max-height: 500px) {
+  #settings {
+    gap: 8px 18px;
+    padding: 8px 14px;
+  }
+
+  .setting {
+    font-size: 13px;
+  }
+
+  .setting input[type="range"] {
+    width: 150px;
+  }
+}
