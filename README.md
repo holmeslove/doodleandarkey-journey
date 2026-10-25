@@ -22,16 +22,17 @@ A 2D story game made with plain HTML, CSS and JavaScript. Doodle, a blue blowfis
 | --- | --- |
 | `index.html` | The page. Holds the canvas and the title screen. |
 | `style.css` | How the page and the title screen look. |
-| `game.js` | The story: the lab, the smash, the escape, and "A few years later...". |
+| `game.js` | The story: the lab, the hits on the tube, the escape, and "A few years later...". |
 | `assets/` | The PNG pictures. |
+| `sounds/` | The sound effects. Each of Arkey's three hits plays its own sound: `test-tube-hit.mp3`, `test-tube-hit-2.mp3` and `test-tube-hit-3.mp3`. The shatter (`shatter.mp3`) starts 0.3 seconds before the tube breaks, and the splash (`splash.mp3`) starts 0.3 seconds before Doodle lands. |
 
 ## Opening story, in order
 
-1. A dark, inky-blue lab with a glowing test tube holding Doodle.
-2. Arkey walks in from the right with his flashlight, facing left.
-3. When he gets close, the smash picture (`arkey-freeing-doodle.png`) fills the screen.
-4. Doodle falls out (`doodle-falling.png`), the tube is empty (`test-tube-broken.png`), and Arkey hops down to the ground.
-5. Doodle changes to his picture without accessories, and they walk off to the right.
+1. A dark, inky-blue lab with a glowing test tube. Doodle is trapped inside, with his eyes closed.
+2. Arkey bounces in from the right with his flashlight, facing left, and stops next to the tube.
+3. He swings three times. The tube shakes after each hit and changes from `test-tube.png` to `test-tube-cracked-1.png`, `-2.png` and `-3.png`. Doodle stays asleep.
+4. The tube shatters (`test-tube-broken.png`). Doodle flies out to the left and falls, sinks a little below the floor, and pops back up. Arkey hops down to the ground.
+5. Doodle gets up with a little hop, opens his eyes, and is surprised for a moment. They run off to the right, leaping as they go. Doodle mostly runs in his side picture, with his front view flashing in now and then, at random.
 6. The screen fades to black and shows "A few years later..." for a few seconds.
 7. Times Square (`scene-2-background.png`) fades in. The story stops here for now.
 
@@ -40,15 +41,17 @@ A 2D story game made with plain HTML, CSS and JavaScript. Doodle, a blue blowfis
 | File | Used for |
 | --- | --- |
 | `doodle-and-arky-journey.png` | Title screen background |
-| `doodle-in-test-tube.png` | Doodle in the test tube. **Not in the assets folder yet.** A placeholder is drawn until it is added. |
+| `test-tube.png` | The intact tube, with Doodle inside |
+| `test-tube-cracked-1.png`, `-2.png`, `-3.png` | Transparent crack overlays on top of the tube and in front of Doodle. Each hit replaces the last one: `-1` after the first hit, `-2` after the second, `-3` after the third. |
+| `doodle-without-accessories-eyes-closed.png` | Doodle asleep, in the tube and lying on the ground until he gets up |
+| `doodle-without-accessories.png` | Doodle awake, getting up and walking out (his front view, flashing in now and then during the walk) |
+| `doodle-without-accessories-surprised.png` | Doodle's surprised face, shown once as he wakes up |
 | `arkey-moving-with-flashlight.png` | Arkey in the opening (flipped when facing left) |
-| `arkey-freeing-doodle.png` | The smash picture |
+| `test-tube-broken.png` | The shattered tube |
 | `doodle-falling.png` | Doodle falling out of the tube |
-| `test-tube-broken.png` | The empty, broken tube |
-| `doodle-without-accessories.png` | Doodle standing |
 | `doodle-moving-without-accessories.png` | Doodle walking right (flipped when walking left) |
 | `scene-2-background.png` | Times Square background |
 
 ## Changing the story timing
 
-The numbers at the top of `game.js` (walk speed, smash length, fade and text timing) can be changed to make the story faster or slower.
+The numbers at the top of `game.js` (walk speed, hit timing, fade and text timing) can be changed to make the story faster or slower.
